@@ -13,6 +13,168 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+  body {
+    padding: 3% 6%;
+  }
+  
+  /*
+  * @media — медиа-запрос,
+  * screen and (...) — условие,
+  * при котором стили внутри
+  * медиа-запроса начнуть работать.
+  *
+  * В данном случае у body
+  * поменяются поля, когда ширина
+  * окна станет меньше 768 пикселей.
+  */
+  @media screen and (max-width: 768px) {
+    body {
+      padding: 1% 2%;
+    }
+  }
+  
+  .row {
+    /*
+    * .row — флекс-контейнер, этаж портфолио.
+    */
+    display: flex;
+    margin-bottom: 100px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .row {
+      /*
+      * На узких экранах переносим
+      * не поместившиеся карточки
+      * на следующую строку.
+      */
+      flex-wrap: wrap;
+      margin-bottom: 0;
+    }
+  }
+
+  .project {
+    /*
+    * .project — флекс-элемент,
+    * карточка проекта.
+    * Будет занимать в два раза
+    * больше места, чем описание проекта.
+    */
+    flex: 2;
+    padding-right: 20px;
+    /*border: 1px solid red;*/
+  }
+
+  .project-caption {
+    /*
+    * .project-caption — описание проекта.
+    */
+    flex: 1;
+    padding-right: 10px;
+  }
+
+  .project:last-child,
+  .project-caption:last-child {
+    /*
+    * У последней подписи или проекта
+    * убираем правый отступ.
+    */
+    padding-right: 0;
+  }
+  
+  /*
+  * На узких экранах растягиваем
+  * проекты и подписи на всю ширину
+  * окна и перенастраиваем отступы.
+  */
+  @media screen and (max-width: 768px) {
+    .project,
+    .project-caption {
+      min-width: 100%;
+      padding: 0;
+      margin-bottom: 15px;
+    }
+    
+    /*
+    * Перемещаем подпись наверх.
+    */
+    .project-caption:last-child {
+      order: -1;
+      margin-bottom: 10px;
+    }
+  }
+  body {
+    font-size: 20px;
+    line-height: 27px;
+  }
+
+  h1 {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 48px;
+    margin: 0 0 .05em 0;
+  } 
+  h2 {
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 36px;
+    margin: 0 0 .05em 0;
+  } 
+  h3 {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 27px;
+    margin: 0 0 .05em 0;
+  }
+  h4 {
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 27px;
+    margin: 0 0 1em 0;
+  }
+
+  p {
+    margin: 0 0 2em 0;
+  }
+  
+span{
+  color: #FFB000;  
+}
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .project-caption {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  
+  .project-caption p {
+    /*
+    * Выравниваем подписи по строчным
+    * с изображениями.
+    */
+    margin-top: -.5em;
+  }
+/*
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -93,4 +255,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+}*/
